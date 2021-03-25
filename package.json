@@ -1,0 +1,23 @@
+{
+    "name": "tmg-parser",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "author": "shasoleosh@libgear.ru",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "axios-https-proxy-fix": "^0.17.1",
+        "cheerio": "^1.0.0-rc.5",
+        "deezer-public-api": "^1.0.4",
+        "https-proxy-agent": "^5.0.0",
+        "puppeteer": "^8.0.0",
+        "request": "^2.88.2",
+        "require-all": "^3.0.0",
+        "spotify-web-api-node": "^5.0.2",
+        "youtube-music-api": "^1.0.6"
+    }
+}

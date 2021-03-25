@@ -1,0 +1,29 @@
+{
+    "spotify": {
+        "clientId": "",
+        "clientSecret": ""
+    },
+    "appleMusic": {
+        "searchPage": "https://music.apple.com/us/search?term="
+    },
+    "deezer": {
+        "searchPage": "https://api.deezer.com/search/track?q="
+    },
+    "vk": {
+        "searchPage": "https://vk.com/al_audio.php",
+        "login": "+7999",
+        "pass": "",
+        "album": "https://vk.com/music/album/"
+    },
+    "yandexMusic": {
+        "album": "https://music.yandex.ru",
+        "search": "https://music.yandex.ru/search?text=",
+        "proxy": ""
+    },
+    "youtubeMusic": {
+        "track": "https://music.youtube.com/watch?v="
+    },
+    "boom": {
+        "pass_key": ""
+    }
+}
