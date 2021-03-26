@@ -17,9 +17,10 @@ module.exports = async(cfg, artist, track, browser) => {
             (async function() {
                 const page = await browser.newPage();
                 await page.goto(cfg.searchPage + encodeURI(`${artist} - ${track}`), { waitUntil: 'networkidle2' })
+                returnData.d = cfg.searchPage + encodeURI(`${artist} - ${track}`)
                 let isFind = true
                 if (await page.waitForSelector('div.search__top-results > div > div:nth-child(1)', {
-                        timeout: 10000
+                        timeout: 15000
                     })) {
                     await page.click('div.search__top-results > div > div:nth-child(1)')
                 }

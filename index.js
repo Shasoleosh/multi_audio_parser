@@ -1,6 +1,6 @@
 const
     inject = require('require-all'),
-    config = require('./config_my.json'),
+    config = require('./config.json'),
     puppeteer = require('puppeteer');
 
 
@@ -36,7 +36,7 @@ const search = async(artist, track, callback) => {
     }
 }
 
-search("Metallica", "The Unforgiven", (err, finalData) => {
+search("Луна", "Самолёты", (err, finalData) => {
     if (err) throw err
     if (finalData)
         console.log(finalData)

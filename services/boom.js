@@ -24,6 +24,7 @@ module.exports = (cfg, artist, track) => {
                 resolve(returnData)
             } else {
                 returnData.err = 'Не найденно совпадений'
+                returnData.items = response.data.response.albums.items
                 returnData.url = 'Не удалось получить'
                 reject(returnData)
             }

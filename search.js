@@ -1,12 +1,12 @@
+var levenshtein = require('fast-levenshtein');
 String.prototype.searchData = function(data) {
     let result = false
-    if (this.indexOf(data) > -1)
-        result = true
-    else if (this.toLowerCase().indexOf(data.toLowerCase()) > -1)
-        result = true
-    else if (this.toLowerCase().indexOf(data.toLowerCase().replace(/ё/gmi, 'е')) > -1)
-        result = true
-    else if (this.toLowerCase().replace(/ё/gmi, 'е').indexOf(data.toLowerCase().replace(/ё/gmi, 'е')) > -1)
-        result = true
+    result = this.toLowerCase().replace(/ё/g, 'е').indexOf(data.toLowerCase().replace(/ё/g, 'е')) > -1
+    this.split(' ').forEach((el) => {
+        if (levenshtein.get(el.toLowerCase(), data.toLowerCase()) <= 2) {
+            result = true
+        }
+    })
     return result
+
 }

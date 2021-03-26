@@ -1,15 +1,16 @@
-const cheerio = require('cheerio')
+const cheerio = require('cheerio');
 require('../search')
-
-function delay(time) {
-    return new Promise(function(resolve) {
-        setTimeout(resolve, time)
-    });
-}
 
 var returnData = {
     platform: "vk"
 }
+
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
 
 module.exports = async(cfg, artist, track, browser) => {
     return new Promise(function(resolve, reject) {
@@ -46,8 +47,8 @@ module.exports = async(cfg, artist, track, browser) => {
                     window.scrollBy(0, window.innerHeight);
                 });
                 while (true) {
-                    a++
                     let slr = 'div.CatalogBlock__search_global_audios.CatalogBlock__layout--list > div > div > div > div > div > div:nth-child(' + a + ')'
+                    a++
                     let ob = $(slr)
                     let findetTrak = ob.find('.audio_row_content > .audio_row__inner > .audio_row__performer_title > .audio_row__title > span.audio_row__title_inner._audio_row__title_inner').text()
                     let findetArtyst = ob.find('.audio_row_content > .audio_row__inner > .audio_row__performer_title > .audio_row__performers > a').text()
@@ -57,9 +58,7 @@ module.exports = async(cfg, artist, track, browser) => {
                         vkdata = JSON.parse(ob.attr('data-audio'))
                         break
                     }
-                    if (a > 20) {
-                        break
-                    }
+                    if (a > 50) break
                 }
                 await delay(500)
                 returnData.track = track

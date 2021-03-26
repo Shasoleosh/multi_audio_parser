@@ -4,7 +4,7 @@
         "clientSecret": ""
     },
     "appleMusic": {
-        "searchPage": "https://music.apple.com/us/search?term="
+        "searchPage": "https://music.apple.com/ru/search?term="
     },
     "deezer": {
         "searchPage": "https://api.deezer.com/search/track?q="
